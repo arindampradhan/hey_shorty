@@ -1,0 +1,6 @@
+Django==1.6
+argparse==1.2.1
+redis==2.0.0
+redisco==0.1.0
+rq==0.4.6
+wsgiref==0.1.2

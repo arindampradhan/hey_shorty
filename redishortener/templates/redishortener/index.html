@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+        <center>
+        <h1 id='lol'>Hey shorty</h1>
+        <p style="color:#453458">ROBUST REDIS URL SHORTNER !!</p>
+        </center>
+        
+        <form class="form-horizontal" action = "" method = "POST">{% csrf_token %}
+        <fieldset>
+        <div class="row" >
+          <div class="col-lg-3"></div> 
+          <div class="col-lg-6">
+            <div class="form-group" >
+              <input type="text" id="url"name="url" class="form-control" placeholder="   Give me a big url        :)" style="base">
+              <center>
+              <div class="col-lg-3"></div>
+              <button class="btn btn-primary btn-lg col-lg-5" type="submit">Shortit!</button>
+              </center>
+              </div>
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+          <div class="col-lg-3"></div> 
+      </div>
+      </fieldset>
+      </form>
+{% endblock %}
+
+
+{% block photo %}
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-2">
+          <h2><div class="icon-preview"><i class="mdi-navigation-more-vert"></i><span></div><span id="wo" style="font-size:40px;color:white">Link</span></h2>
+          <img src="static/img/glink.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-2">
+          <h2><div class="icon-preview"><i class="mdi-navigation-unfold-less"></i></div><span id="wo" style="font-size:27px;color:white">Minify</span></h2>
+          <img src="static/img/mini.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-2">
+          <h1 id="sk">Go</h1>
+          <img src="static/img/cool.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+      </div>
+{% endblock %}

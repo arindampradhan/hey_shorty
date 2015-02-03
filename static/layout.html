@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <title>Bootstrap Material</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/ripples.min.css" rel="stylesheet">
+        <link href="./css/custom.css" rel="stylesheet">
+        <link href="./css/material-wfont.min.css" rel="stylesheet">
+        <link href="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+
+  <body>
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron ">
+      <div class="container">
+        <br>
+        <center>
+        <h1 id='lol'>Hey shorty</h1>
+        <p style="color:#453458">ROBUST REDIS URL SHORTNER !!</p>
+        </center>
+        
+
+        <div class="row" >
+          <div class="col-lg-3"></div> 
+          <div class="col-lg-6">
+            <div class="form-group" >
+              <input type="text" class="form-control" placeholder="   Give me a big url        :)" style="base">
+              <center>
+              <div class="col-lg-3"></div>
+              <button class="btn btn-primary btn-lg col-lg-5" type="button">Shortit!</button>
+              </center>
+              </div>
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+          <div class="col-lg-3"></div> 
+      </div>
+      <br><br>
+    </div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-2">
+          <h2><div class="icon-preview"><i class="mdi-navigation-more-vert"></i><span></div><span id="wo" style="font-size:40px;color:white">Link</span></h2>
+          <img src="./img/glink.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+        <div class="col-md-2">
+          <h2><div class="icon-preview"><i class="mdi-navigation-unfold-less"></i></div><span id="wo" style="font-size:27px;color:white">Minify</span></h2>
+          <img src="./img/mini.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+        <div class="col-md-2">
+          <h2><div class="icon-preview"><i class="mdi-file-cloud-done"></i></div><span id="wo" style="font-size:29px;color:white">Share</span></h2>
+          <img src="./img/gshare.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+        <div class="col-md-2">
+          <h2><div class="icon-preview"><i class="mdi-navigation-unfold-more"></i></div><span id="wo" style="font-size:24px;color:white">Expand</span></h2>
+          <img src="./img/expand.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+        <div class="col-md-2">
+          
+        </div>
+        <div class="col-md-2">
+          <h1 id="sk">Go</h1>
+          <img src="./img/cool.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+      </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script>
+            (function(){
+
+                var $button = $("<div id='source-button' class='btn btn-primary btn-xs'>&lt; &gt;</div>").click(function(){
+                    var index =  $('.bs-component').index( $(this).parent() );
+                    $.get(window.location.href, function(data){
+                        var html = $(data).find('.bs-component').eq(index).html();
+                        html = cleanSource(html);
+                        $("#source-modal pre").text(html);
+                        $("#source-modal").modal();
+                    })
+
+                });
+
+                $('.bs-component [data-toggle="popover"]').popover();
+                $('.bs-component [data-toggle="tooltip"]').tooltip();
+
+                $(".bs-component").hover(function(){
+                    $(this).append($button);
+                    $button.show();
+                }, function(){
+                    $button.hide();
+                });
+
+                function cleanSource(html) {
+                    var lines = html.split(/\n/);
+
+                    lines.shift();
+                    lines.splice(-1, 1);
+
+                    var indentSize = lines[0].length - lines[0].trim().length,
+                        re = new RegExp(" {" + indentSize + "}");
+
+                    lines = lines.map(function(line){
+                        if (line.match(re)) {
+                            line = line.substring(indentSize);
+                        }
+
+                        return line;
+                    });
+
+                    lines = lines.join("\n");
+
+                    return lines;
+                }
+
+                $(".icons-material .icon").each(function() {
+                    $(this).after("<br><br><code>" + $(this).attr("class").replace("icon ", "") + "</code>");
+                });
+
+            })();
+
+        </script>
+        <script src="./js/ripples.min.js"></script>
+        <script src="./js/material.min.js"></script>
+        <script src="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
+
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+        <script>
+            $(function() {
+                $.material.init();
+                $(".shor").noUiSlider({
+                    start: 40,
+                    connect: "lower",
+                    range: {
+                        min: 0,
+                        max: 100
+                    }
+                });
+
+                $(".svert").noUiSlider({
+                    orientation: "vertical",
+                    start: 40,
+                    connect: "lower",
+                    range: {
+                        min: 0,
+                        max: 100
+                    }
+                });
+            });
+        </script>
+  </body>
+</html>

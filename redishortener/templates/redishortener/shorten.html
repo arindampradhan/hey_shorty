@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+{% if short_url %}
+  <h3 class="well" style="background-color:#50386B"> http://127.0.0.1:8000/{{short_url}}</h3>
+
+<div style="padding-bottom: 2.7cm;"></div>
+{% endif %}
+{% endblock %}
+
+
+{% block photo %}
+<br><br>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-2">
+          <h2><div class="icon-preview"><i class="mdi-file-cloud-done"></i></div><span id="wo" style="font-size:29px;color:white">Share</span></h2>
+          <img src="static/img/gshare.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-2">
+          <h2><div class="icon-preview"><i class="mdi-navigation-unfold-more"></i></div><span id="wo" style="font-size:24px;color:white">Expand</span></h2>
+          <img src="static/img/expand.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-2">
+          <h1 id="sk">Go</h1>
+          <img src="static/img/cool.png" alt="" class="img-responsive">
+          <p></p>
+        </div>
+      </div>
+
+{% endblock %}
