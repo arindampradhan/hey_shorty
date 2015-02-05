@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tastypie',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -133,3 +134,9 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+
+# redis tastypie settings
+REDIS_HOST = '127.0.0.1:8000'
+REDIS_PORT = 6379
+REDIS_DATABASE = 0
