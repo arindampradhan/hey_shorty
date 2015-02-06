@@ -1,6 +1,7 @@
 from tastypie.authorization import Authorization
-from tastypie_redis.resources import RedisResource
+from .redis_resource import RedisResource
 from .models import Url
+import redis
 
 
 class UrlResource(RedisResource):
@@ -11,3 +12,8 @@ class UrlResource(RedisResource):
         list_allowed_methods = ["delete", "get", "post"]
         authorization = Authorization()
         object_class = Url
+
+
+    def get_database(self):
+        import redis
+        return redis.StrictRedis(host='localhost', port=6379, db=0)
